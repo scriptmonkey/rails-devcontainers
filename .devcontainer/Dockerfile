@@ -6,6 +6,6 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor
   && apt-get update \
   && apt-get install -y nodejs postgresql-client\
   && rm -rf  /var/lib/apt/lists/* \
-  && gem install rails
+  && gem install rails pg
 
 
