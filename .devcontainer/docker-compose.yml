@@ -1,8 +1,8 @@
 services:
-  db:
-    image: postgres
+  postgres:
+    image: postgres:latest
     volumes:
-      - ./container_db:/var/postgresql/data
+      - ./postgres-data:/var/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -19,4 +19,7 @@ services:
     ports: 
       - '3000:3000'
     depends_on:
-      -  db
+      -  postgres
+
+volumes:
+  postgres-data:
